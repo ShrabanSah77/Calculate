@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #f4f4f4;
+      }
+      .box {
+        border: 1px solid #ccc;
+        padding: 20px;
+        background: white;
+        text-align: center;
+      }
+      input,
+      button {
+        margin: 5px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h2>Simple Calculator</h2>
+
+      <form action="result" method="POST">
+        {% csrf_token %}
+        <input
+          type="number"
+          name="num1"
+          placeholder="Enter first number"
+        /><br />
+        <input
+          type="number"
+          name="num2"
+          placeholder="Enter second number"
+        /><br />
+
+        <button type="submit" name="operation" value="add">+</button>
+        <button type="submit" name="operation" value="sub">-</button>
+        <button type="submit" name="operation" value="mul">*</button>
+        <button type="submit" name="operation" value="div">/</button>
+      </form>
+    </div>
+  </body>
+</html>
