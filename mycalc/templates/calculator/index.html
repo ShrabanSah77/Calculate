@@ -1,0 +1,51 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+  </head>
+  <body>
+    <div class="box">
+      <h2>Simple Calculator</h2>
+
+      <form action="result" method="POST">
+        {% csrf_token %}
+        <input type="" placeholder="Display the result" /><br />
+
+          <button type="button" onclick="appendToResult('√')">√</button>
+          <button type="button" onclick="appendToResult('x²')">x²</button>
+          <button type="button" onclick="appendToResult('^')">^</button>
+          <button type="button" onclick="addBracket()">()</button>
+          <button type="button" onclick="appendToResult('<>')"><></button>
+          <br />
+          <button type="button" onclick="appendToResult('7')">7</button>
+          <button type="button" onclick="appendToResult('7')">8</button>
+          <button type="button" onclick="appendToResult('7')">9</button>
+          <button type="button" onclick="backspace()">⌫</button>
+          <button type="button" onclick="clearResult()">C</button>
+          <br />
+          <button type="button" onclick="appendToResult('7')">4</button>
+          <button type="button" onclick="appendToResult('7')">5</button>
+          <button type="button" onclick="appendToResult('7')">6</button>
+          <button type="button" onclick="appendToResult('%')">%</button>
+          <button type="button" onclick="appendToResult('/')">/</button>
+          <br />
+          <button type="button" onclick="appendToResult('7')">1</button>
+          <button type="button" onclick="appendToResult('7')">2</button>
+          <button type="button" onclick="appendToResult('7')">3</button>
+          <button type="button" onclick="appendToResult('*')">*</button>
+          <button type="button" onclick="appendToResult('-')">-</button>
+          <br />
+          <button type="button" onclick="appendToResult('0')">0</button>
+          <button type="button" onclick="appendToResult('0')">00</button>
+          <button type="button" onclick="appendToResult('.')">.</button>
+          <button type="button" onclick="calculate()">=</button>
+          <button type="button" onclick="appendToResult('+')">+</button>
+
+      </form>
+    </div>
+  </body>
+</html>
