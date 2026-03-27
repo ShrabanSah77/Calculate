@@ -4,17 +4,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
   </head>
   <body>
     <div class="box">
-      <h2>Simple Calculator</h2>
+      <h2>Scientific Calculator</h2>
 
-      <form action="result" method="POST">
+      <form method="POST">
         {% csrf_token %}
-        <input type="" placeholder="Display the result" /><br />
-
+        <input type="text" name="expression" id="display" placeholder="Display the result" readonly><br />
+<!-- Buttons -->
           <button type="button" onclick="appendToResult('√')">√</button>
           <button type="button" onclick="appendToResult('x²')">x²</button>
           <button type="button" onclick="appendToResult('^')">^</button>
@@ -46,6 +46,10 @@
           <button type="button" onclick="appendToResult('+')">+</button>
 
       </form>
+      <!-- show the result -->
+       <h3>{{ result }}</h3>
     </div>
+    <!-- js file -->
+    <script src="(% static, 'scripts/script.js' %)"></script>
   </body>
 </html>
