@@ -13,19 +13,22 @@
 
       <form method="POST">
         {% csrf_token %}
-        <input type="text" name="expression" id="display" placeholder="Display the result" readonly><br />
-<!-- Buttons -->
-          <button type="button" onclick="appendToResult('√')">√</button>
-          <button type="button" onclick="appendToResult('x²')">x²</button>
+
+        <!-- Display -->
+        <input type="text" name="expression" id="display" readonly><br />
+          
+        <!-- Buttons -->
           <button type="button" onclick="appendToResult('^')">^</button>
           <button type="button" onclick="addBracket()">()</button>
           <button type="button" onclick="appendToResult('<>')"><></button>
+          <button type="button" onclick="backspace()">⌫</button>
+          <button type="button" onclick="clearResult()">C</button>
           <br />
           <button type="button" onclick="appendToResult('7')">7</button>
           <button type="button" onclick="appendToResult('7')">8</button>
           <button type="button" onclick="appendToResult('7')">9</button>
-          <button type="button" onclick="backspace()">⌫</button>
-          <button type="button" onclick="clearResult()">C</button>
+          <button type="button" onclick="appendToResult('√')">√</button>
+          <button type="button" onclick="appendToResult('x²')">x²</button>
           <br />
           <button type="button" onclick="appendToResult('7')">4</button>
           <button type="button" onclick="appendToResult('7')">5</button>
