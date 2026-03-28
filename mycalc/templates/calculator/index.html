@@ -10,14 +10,13 @@
   <body>
     <div class="box">
       <h2>Scientific Calculator</h2>
-
       <form method="POST">
         {% csrf_token %}
 
         <!-- Display -->
-        <input type="text" name="expression" id="display" readonly><br />
-          
-        <!-- Buttons -->
+         <input type="text" name="operation" id="display" readonly><br>
+
+         <!-- buttons -->
           <button type="button" onclick="appendToResult('^')">^</button>
           <button type="button" onclick="addBracket()">()</button>
           <button type="button" onclick="appendToResult('<>')"><></button>
@@ -49,10 +48,9 @@
           <button type="button" onclick="appendToResult('+')">+</button>
 
       </form>
-      <!-- show the result -->
+      <!-- Show the result -->
        <h3>{{ result }}</h3>
+       <script src="{% static 'scripts/script.js' %}"></script>
     </div>
-    <!-- js file -->
-    <!-- <script src="(% static, 'scripts/script.js' %)"></script> -->
   </body>
 </html>
