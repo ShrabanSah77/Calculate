@@ -5,24 +5,24 @@ def calculate_view(request):
     result = ""
 
     if request.method == "POST":
-        expression = request.POST.get("expression")
+        operation = request.POST.get("operation")
 
         try:
             # Replace symbols if needed
-            expression = expression.replace("^", "**")
+            operation = operation.replace("^", "**")
 
             # Handle special functions
-            if "√" in expression:
-                number = float(expression.replace("√", ""))
+            if "√" in operation:
+                number = float(operation.replace("√", ""))
                 result = math.sqrt(number)
 
-            elif "x²" in expression:
-                number = float(expression.replace("x²", ""))
+            elif "x²" in operation:
+                number = float(operation.replace("x²", ""))
                 result = number ** 2
 
             else:
                 # Normal calculation
-                result = eval(expression)
+                result = eval(operation)
 
         except Exception as e:
             result = "Error"
