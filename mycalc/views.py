@@ -1,15 +1,30 @@
 from django.shortcuts import render
+import math
 
-# Create your views here.
-def calculate_view(request):
-    result = ''
-    if request.method == 'POST':
-        expression = request.POST.get('expression')
+def calculator(request):
+    result = ""
+
+    if request.method == "POST":
+        expression = request.POST.get("expression")
 
         try:
-            # Evaluate the expression safely
-            result = eval(expression)
-        except:
-            result = 'Error'
+            # Replace symbols if needed
+            expression = expression.replace("^", "**")
 
-    return render (request, 'calculator/index.html', {'result': result})
+            # Handle special functions
+            if "√" in expression:
+                number = float(expression.replace("√", ""))
+                result = math.sqrt(number)
+
+            elif "x²" in expression:
+                number = float(expression.replace("x²", ""))
+                result = number ** 2
+
+            else:
+                # Normal calculation
+                result = eval(expression)
+
+        except Exception as e:
+            result = "Error"
+
+    return render(request, "calculator/calculator.html", {"result": result})c
