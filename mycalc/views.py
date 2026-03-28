@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import math
 
-def calculator(request):
+def calculate_view(request):
     result = ""
 
     if request.method == "POST":
@@ -27,4 +27,4 @@ def calculator(request):
         except Exception as e:
             result = "Error"
 
-    return render(request, "calculator/calculator.html", {"result": result})c
+    return render(request, "calculator/index.html", {"result": result})
