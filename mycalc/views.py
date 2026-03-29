@@ -8,5 +8,5 @@ def calculate_view(request):
     if request.method == 'POST':
         result = request.POST.get('result', '')
 
-        return render(request, 'calculate/index.html', {'result': result})
-    return render(request, 'calculate/index.html')
+        return render(request, 'mycalc/index.html', {'result': result})
+    return render(request, 'mycalc/index.html')
