@@ -1,6 +1,7 @@
 from django.urls import path
-from . import views
+from django.http import HttpResponse
+from mycalc.views import *
 
 urlpatterns = [
-    path('', views.calculate_view, name = 'calculate_view'),
+    path('', calculate_view, name = 'calculate_view'),
 ]
